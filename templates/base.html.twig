@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bug Reproducer</title>
+    </head>
+    <body>
+        <h1>{{ service }}</h1>
+
+        {% if form is defined %}
+            {{ form(form) }}
+        {% endif %}
+    </body>
+</html>
