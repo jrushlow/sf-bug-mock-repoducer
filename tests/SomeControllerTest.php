@@ -16,6 +16,8 @@ class SomeControllerTest extends WebTestCase
 
         // Init the Client and set the mock service
         $client = static::createClient();
+//        $client->disableReboot(); <--- This allows you to keep the same container between calls
+
         static::getContainer()->set(ACoolService::class, $mockService);
 
         // 1st Call - The mockService is passed to the controller
@@ -29,6 +31,6 @@ class SomeControllerTest extends WebTestCase
         ]);
 
         self::assertResponseIsSuccessful();
-        self::assertSelectorTextContains('h1', 'Form Submitted: Mock_');
+        self::assertSelectorTextContains('h1', 'Submitted: Mock_');
     }
 }
